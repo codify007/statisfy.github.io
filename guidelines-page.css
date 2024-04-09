@@ -1,0 +1,128 @@
+.home-page-icon3,
+.nav-bar3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+}
+.home-page-icon3 {
+  height: 832px;
+  object-fit: cover;
+}
+.nav-bar3 {
+  background-color: var(--color-gray-300);
+  height: 40px;
+}
+.about-box3,
+.guideline-box3 {
+  position: absolute;
+  top: 7px;
+  left: 594px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-gray-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-snow-100);
+  box-sizing: border-box;
+  width: 93.1px;
+  height: 25px;
+}
+.guideline-box3 {
+  left: 1120px;
+}
+.guidelines3 {
+  position: absolute;
+  top: 10px;
+  left: 1137px;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-100);
+}
+.about7 {
+  margin: 0;
+}
+.about6 {
+  top: 10px;
+  left: 622px;
+  font-size: var(--font-size-xs);
+  color: var(--color-snow-300);
+}
+.about6,
+.home6,
+.home7 {
+  position: absolute;
+}
+.home6 {
+  top: 7px;
+  left: 39px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-gray-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-snow-100);
+  box-sizing: border-box;
+  width: 93.1px;
+  height: 25px;
+}
+.home7 {
+  top: 10px;
+  left: 69px;
+  font-size: var(--font-size-xs);
+  color: var(--color-snow-300);
+  cursor: pointer;
+}
+.guidelines-page-child {
+  position: absolute;
+  top: 130px;
+  left: 277px;
+  background-color: var(--color-gray-400);
+  width: 729px;
+  height: 431px;
+}
+.n {
+  color: var(--color-black);
+}
+.guidelines-section-container {
+  position: absolute;
+  top: 159px;
+  left: 565px;
+  font-size: var(--font-size-xl);
+}
+.sample-size-should {
+  font-size: var(--font-size-mini);
+}
+.distribution-should-be-container,
+.sample-size-should-container {
+  position: absolute;
+  top: 210px;
+  left: 344px;
+  font-weight: 600;
+  display: inline-block;
+  width: 645px;
+}
+.distribution-should-be-container {
+  top: 249px;
+}
+.independence-should-be-container,
+.sample-num-container,
+.type-of-var-container {
+  position: absolute;
+  top: 297px;
+  left: 344px;
+  font-weight: 600;
+  display: inline-block;
+  width: 645px;
+}
+.independence-should-be-container,
+.sample-num-container {
+  top: 345px;
+}
+.sample-num-container {
+  top: 393px;
+}
+.guidelines-page {
+  width: 100%;
+  position: relative;
+  height: 832px;
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: var(--color-snow-200);
+  font-family: var(--font-inter);
+}

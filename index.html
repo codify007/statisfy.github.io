@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <!-- Linking external CSS files -->
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./index.css" />
+  
+  <!-- Linking Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+</head>
+<body>
+  <div class="home-page">
+    <!-- Image for home page icon -->
+    <img class="home-page-icon" alt="" src="./public/home-page@2x.png" />
+
+    <!-- calculate button -->
+    <div class="calculate-box"></div>
+    <div class="calculate" id="calculateText">Calculate</div>
+    <div class="nav-bar"></div>
+    <!-- About button and Guidelines button  -->
+    <div class="about-box" id="aboutBox"></div>
+    <div class="guideline-box"></div>
+    <div class="guidelines" id="guidelinesText">Guidelines</div>
+    <div class="about">
+      <p class="about1">About</p>
+    </div>
+
+    <!-- Stat-isfy section -->
+    <div class="stat-isfy">Stat-isfy</div>
+
+    <!-- Form inputs -->
+    <div class="form-box"></div>
+    <div class="sample-size"></div>
+    <div class="var"></div>
+    <div class="distribution"></div>
+    <div class="independence"></div>
+    <div class="sample-num"></div>
+    <div class="sample-size1">Sample Size
+      <span>
+        <!-- Input field for sample size -->
+        <input type="text" id="sampleInput" placeholder="Enter sample size" required>
+      </span>
+    </div>
+    <div class="type-of-var">Comp metric
+      <span>
+        <!-- Input field for comparison metric -->
+        <input type="text" id="compInput" placeholder="Enter mean or variance etc " required>
+      </span>
+    </div>
+    <div class="distribution1">Distribution
+      <span>
+        <!-- Input field for distribution -->
+        <input type="text" id="disInput" placeholder="Enter distribution" required>
+      </span>
+    </div>
+    <div class="independence1">Independence
+      <span>
+        <!-- Input field for independence -->
+        <input type="text" id="indInput" placeholder="Enter independent or not" required>
+      </span>
+    </div>
+    <div class="sample-num1">Sample num
+      <span>
+        <!-- Input field for sample number -->
+        <input type="text" id="sampleNumInput" placeholder="Enter sample num" required>
+      </span>
+    </div>
+
+    <!-- Home button -->
+    <div class="home"></div>
+    <div class="home1">Home</div>
+  </div>
+
+  <!-- JavaScript section -->
+  <script>
+    alert("Read guidelines before answering");
+    
+    // Event listener for the Calculate button
+    var calculateText = document.getElementById("calculateText");
+    calculateText.addEventListener("click", function (e) {
+      var sampleSize = document.getElementById("sampleInput").value;
+      var comp_metric = document.getElementById("compInput").value;
+      var distribution = document.getElementById("disInput").value;
+      var independence = document.getElementById("indInput").value;
+      var sampleNum = document.getElementById("sampleNumInput").value;
+
+      // Check if all inputs are filled
+      if (sampleSize != "" && comp_metric != "" && distribution != "" && independence != "" && sampleNum != "") {
+        // Store user data in local storage
+        var obj = {
+          "sampleSize": sampleSize,
+          "comp_metric": comp_metric,
+          "distribution": distribution,
+          "independence": independence,
+          "sampleNum": sampleNum
+        };
+        localStorage.setItem('userData', JSON.stringify(obj));
+
+        // Redirect to calculate-page.html
+        window.location.href = "./calculate-page.html";
+      } else {
+        // Alert if any input is empty
+        alert('Please fill all inputs');
+      }
+    });
+
+    // Event listener for the About box
+    var aboutBox = document.getElementById("aboutBox");
+    if (aboutBox) {
+      aboutBox.addEventListener("click", function (e) {
+        // Redirect to about-page.html
+        window.location.href = "./about-page.html";
+      });
+    }
+
+    // Event listener for the Guidelines section
+    var guidelinesText = document.getElementById("guidelinesText");
+    if (guidelinesText) {
+      guidelinesText.addEventListener("click", function (e) {
+        // Redirect to guidelines-page.html
+        window.location.href = "./guidelines-page.html";
+      });
+    }
+  </script>
+</body>
+</html>

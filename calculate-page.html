@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./calculate-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="calculate-page">
+      <img class="home-page-icon2" alt="" src="./public/home-page@2x.png" />
+
+      <div class="nav-bar2"></div>
+      <div class="about-box2"></div>
+      <div class="guideline-box2"></div>
+      <div class="guidelines2" id="guidelinesText">Guidelines</div>
+      <div class="about4" id="aboutText">
+        <p class="about5">About</p>
+      </div>
+      <div class="home4"></div>
+      <div class="home5" id="homeText">Home</div>
+      
+      <div class="congrats-t-test-will">
+        Congrats t-test will be ideal . For more info click<a href="https://datatab.net/tutorial/one-sample-t-test"> Here </a>
+      </div>
+    </div>
+
+    <script>
+      var data=JSON.parse(localStorage.getItem('userData'));
+      
+      // Input:
+var sampleSize = parseInt(data["sampleSize"]);
+var comp_metric = data["comp_metric"].toLowerCase();
+var distribution = data["distribution"].toLowerCase();
+var independence = data["independence"].toLowerCase();
+var sampleNum = parseInt(data["sampleNum"]);
+
+// Output:
+var cal = document.querySelector(".congrats-t-test-will");
+
+// if (isNaN(sampleSize) || !sampleSize || !comp_metric || !distribution || !independence || isNaN(sampleNum)){
+//   cal.innerHTML = "Invalid input data. Please check your entries.";
+//   return; // Prevent further execution if validation fails
+// }
+
+// **1. T-test (Independent Samples, Mean, Normal Distribution)**
+if (sampleSize <= 30 && comp_metric === "mean" && distribution === "normal" && independence === "independent" && sampleNum === 2) {
+  cal.innerHTML = "Congrats! T-test (Independent Samples) is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/independent-samples-t-test'>Here</a>";
+}
+
+// **2. Mann-Whitney U test (Independent Samples, Median, Not Normal)**
+else if (sampleSize > 30 && comp_metric === "median" && distribution !== "normal" && independence === "independent" && sampleNum >= 2) {
+  cal.innerHTML = "Congrats! Mann-Whitney U test is ideal for your scenario. For more info click <a href='https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test'>Here</a>";
+}
+
+// **3. Chi-square test for Goodness of Fit (One Sample, Distribution)**
+else if (sampleSize >= 25 && comp_metric === "distribution" && distribution === "normal" && sampleNum === 1) {
+  cal.innerHTML = "Congrats! Chi-square test for goodness of fit is ideal for your scenario. For more info click <a href='https://www.scribbr.com/statistics/chi-square-goodness-of-fit/#:~:text=of%20fit%20test%3F-,A%20chi%2Dsquare%20(%CE%A72)%20goodness%20of%20fit%20test,close%20to%20the%20observed%20values.'>Here</a>";
+}
+
+// **4. Wilcoxon Signed-Rank test (Related Samples, Median, Any Distribution)**
+else if (comp_metric === "median" && independence === "related" && sampleNum >= 2) {
+  cal.innerHTML = "Congrats! Wilcoxon Signed-Rank test is ideal for your scenario. For more info click <a href='https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test'>Here</a>";
+}
+
+// **5. Paired T-test (Related Samples, Mean, Normal Distribution)**
+else if (comp_metric === "mean" && independence === "related" && distribution === "normal" && sampleNum === 2) {
+  cal.innerHTML = "Congrats! Paired T-test is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/paired-t-test'>Here</a>";
+}
+
+// **6. F-Test (Independent Samples, Variance)**
+else if (comp_metric === "variance" && independence === "independent" && distribution === "normal" && sampleNum >= 2) {
+  cal.innerHTML = "Congrats! F-Test is ideal for your scenario. For more info click <a href='https://en.wikipedia.org/wiki/F-test#:~:text=An%20F%2Dtest%20is%20any,the%20error%20term%20(%CE%B5).'>Here</a>";
+}
+
+// **7. Chi-square test for Independence (Two or More Categorical Variables)**
+else if (comp_metric === "distribution" && independence === "independent" && sampleNum >= 2 && distribution !== "normal") {
+  cal.innerHTML = "Congrats! Chi-square test for independence is ideal for your scenario. For more info click <a href='https://www.scribbr.com/statistics/chi-square-test-of-independence/#:~:text=A%20chi%2Dsquare%20test%20of%20independence%20works%20by%20comparing%20the,values%20of%20the%20other%20variable.&text=Example%3A%20Expected%20values%20The%20city,frequencies%20using%20the%20contingency%20table.'>Here</a>";
+}
+
+// **8. One-sample t-test (One Sample, Mean, Normal Distribution)**
+else if (sampleSize >= 30 && comp_metric === "mean" && distribution === "normal" && sampleNum === 1) {
+  cal.innerHTML = "Congrats! One-sample t-test is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/one-sample-t-test'>Here</a>";
+}
+
+// **9. Z-test (One Sample, Mean, Normal Distribution, Large Sample Size)**
+else if (sampleSize >= 30 && comp_metric === "mean" && distribution === "normal" && sampleNum === 1) {
+  cal.innerHTML = "Congrats! Z-test is ideal for your scenario (large sample size). For more info click <a href='https://en.wikipedia.org/wiki/Z-test'>Here</a>";
+}
+
+// **10. Mann-Whitney U test (Independent Samples, Median, Any Distribution)**
+else if (sampleSize < 30 && comp_metric === "median" && independence === "independent" && sampleNum >= 2) {
+  cal.innerHTML = "Congrats! Mann-Whitney U test is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/mann-whitney-u-test'>Here</a>";
+}
+
+// **11. Kolmogorov-Smirnov test (Two Samples, Distribution)**
+else if (sampleSize >= 25 && comp_metric === "distribution" && independence === "independent" && sampleNum === 2) {
+  cal.innerHTML = "Congrats! Kolmogorov-Smirnov test is ideal for your scenario. For more info click <a href='https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test'>Here</a>";
+}
+
+// **12. Kruskal-Wallis test (Multiple Samples, Median, Any Distribution)**
+else if (sampleSize < 30 && comp_metric === "median" && sampleNum > 2) {
+  cal.innerHTML = "Congrats! Kruskal-Wallis test is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/kruskal-wallis-test'>Here</a>";
+}
+
+// **13. ANOVA (Multiple Samples, Mean, Normal Distribution)**
+else if (sampleSize >= 30 && comp_metric === "mean" && distribution === "normal" && sampleNum > 2) {
+  cal.innerHTML = "Congrats! ANOVA is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/anova'>Here</a>";
+}
+
+// **14. Regression Analysis (Multiple Samples, Regression)**
+else if (comp_metric === "regression" && sampleNum > 2) {
+  cal.innerHTML = "Congrats! Regression analysis is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/linear-regression'>Here</a>";
+}
+
+// **15. Chi-square test of homogeneity (Two or More Categorical Variables, Independence)**
+else if (comp_metric === "distribution" && independence === "independent" && sampleNum >= 2) {
+  cal.innerHTML = "Congrats! Chi-square test of homogeneity is ideal for your scenario. For more info click <a href='https://www.studysmarter.co.uk/explanations/math/statistics/chi-square-test-for-homogeneity/#:~:text=Chi%2DSquare%20Test%20for%20Homogeneity%20Definition,-When%20you%20want&text=A%20Chi%2Dsquare%20test%20for%20homogeneity%20is%20a%20non%2Dparametric,they%20have%20the%20same%20distribution.'>Here</a>";
+}
+
+// **16. Wilcoxon Rank Sum test (Independent Samples, Any Metric, Any Distribution)**
+else if (independence === "independent" && sampleNum >= 2) {
+  cal.innerHTML = "Congrats! Wilcoxon Rank Sum test is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/wilcoxon-test'>Here</a>";
+}
+
+// **17. Pearson correlation coefficient (Correlation, Any Distribution)**
+else if (comp_metric === "correlation" && sampleNum >= 2  && distribution==="normal") {
+  cal.innerHTML = "Congrats! Pearson correlation coefficient is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/pearson-correlation'>Here</a>";
+}
+
+// **18. Spearman's rank correlation coefficient (Correlation, Any Distribution)**
+else if (comp_metric === "correlation" && sampleNum >= 2) {
+  cal.innerHTML = "Congrats! Spearman's rank correlation coefficient is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/spearman-correlation'>Here</a>";
+}
+
+
+
+// **19. Chi-square test of association (Two Categorical Variables, Independence)**
+else if (comp_metric === "distribution" && independence === "independent" && sampleNum === 2) {
+  cal.innerHTML = "Congrats! Chi-square test of association is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/chi-square-test'>Here</a>";
+}
+
+// **20. Friedman test (Multiple Related Samples, Any Metric, Any Distribution)**
+else if (independence === "related" && sampleNum > 2) {
+  cal.innerHTML = "Congrats! Friedman test is ideal for your scenario. For more info click <a href='https://datatab.net/tutorial/friedman-test'>Here</a>";
+}
+else{
+  cal.innerHTML="Currently no statistical test available according to the given parameters";
+}
+
+
+
+
+
+
+
+      var guidelinesText = document.getElementById("guidelinesText");
+      if (guidelinesText) {
+        guidelinesText.addEventListener("click", function (e) {
+          window.location.href = "./guidelines-page.html";
+        });
+      }
+      
+      var aboutText = document.getElementById("aboutText");
+      if (aboutText) {
+        aboutText.addEventListener("click", function (e) {
+          window.location.href = "./about-page.html";
+        });
+      }
+      
+      var homeText = document.getElementById("homeText");
+      if (homeText) {
+        homeText.addEventListener("click", function (e) {
+          window.location.href = "./index.html";
+        });
+      }
+      </script>
+  </body>
+</html>

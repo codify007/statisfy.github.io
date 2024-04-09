@@ -1,0 +1,113 @@
+.home-page-icon1,
+.nav-bar1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+}
+.home-page-icon1 {
+  height: 832px;
+  object-fit: cover;
+}
+.nav-bar1 {
+  background-color: var(--color-gray-300);
+  height: 40px;
+}
+.about-box1,
+.guideline-box1 {
+  position: absolute;
+  top: 7px;
+  left: 594px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-gray-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-snow-100);
+  box-sizing: border-box;
+  width: 93.1px;
+  height: 25px;
+}
+.guideline-box1 {
+  left: 1120px;
+  cursor: pointer;
+}
+.guidelines1 {
+  position: absolute;
+  top: 10px;
+  left: 1137px;
+  color: var(--color-gray-100);
+}
+.about2 {
+  top: 10px;
+  left: 622px;
+  color: var(--color-snow-300);
+}
+.about2,
+.home2,
+.home3 {
+  position: absolute;
+}
+.home2 {
+  top: 7px;
+  left: 39px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-gray-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-snow-100);
+  box-sizing: border-box;
+  width: 93.1px;
+  height: 25px;
+  cursor: pointer;
+}
+.home3 {
+  top: 10px;
+  left: 69px;
+  color: var(--color-snow-300);
+}
+.about-section-box {
+  position: absolute;
+  top: 71px;
+  left: 300px;
+  background-color: var(--color-gray-400);
+  width: 800px;
+  height: 378px;
+}
+.span {
+  color: var(--color-black);
+}
+.about-section {
+  position: absolute;
+  top: 50px;
+  left: 550px;
+  font-size: var(--font-size-xl);
+  white-space: pre-wrap;
+}
+.this-is-a {
+  margin:0;
+}
+.hisher-data {
+  margin: 0;
+  white-space: pre-wrap;
+}
+.the-guidelines-section-container,
+.this-is-a-container {
+  position: absolute;
+  top: 131px;
+  left: 408px;
+  right:150px;
+  font-size: var(--font-size-mini);
+  font-weight: 600;
+  display: inline-block;
+  width: 645px;
+}
+.the-guidelines-section-container {
+  top: 260px;
+}
+.about-page {
+  width: 100%;
+  position: relative;
+  height: 832px;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-snow-200);
+  font-family: var(--font-inter);
+}

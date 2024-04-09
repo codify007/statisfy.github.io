@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta tags for character encoding and viewport settings -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./about-page.css" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Container for the about page -->
+    <div class="about-page">
+      <!-- Homepage icon -->
+      <img class="home-page-icon1" alt="" src="./public/home-page@2x.png" />
+
+      <!-- Navigation bar -->
+      <div class="nav-bar1"></div>
+      <!-- About box -->
+      <div class="about-box1"></div>
+      <!-- Guideline box -->
+      <div class="guideline-box1" id="guidelineBox"></div>
+      <!-- Title for guidelines section -->
+      <div class="guidelines1">Guidelines</div>
+      <!-- About section title -->
+      <div class="about2">
+        <p class="this-is-a">About</p>
+      </div>
+      <!-- Home link -->
+      <div class="home2" id="home"></div>
+      <!-- Text for home link -->
+      <div class="home3">Home</div>
+      <!-- Container for about section -->
+      <div class="about-section-box"></div>
+      <!-- Header for about section -->
+      <b class="about-section">
+        <span>About Section </span>
+        <span class="span"> </span>
+      </b>
+      <!-- Container for description of the application -->
+      <div class="this-is-a-container">
+        <p class="this-is-a">
+          This is a GUI Application for prediction of Statistical tests Where
+          the User can input certain parameters according to his/her data , and can get an appropriate response
+          on what statistical test to use
+        </p>
+      </div>
+      <!-- Container for guidelines section -->
+      <div class="the-guidelines-section-container">
+        <p class="this-is-a">
+          The guidelines section guides users on what should the
+          users fill in to get an appropriate results , pls visit it before
+          using the application
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Event listener for guideline box, redirects to guidelines page
+      var guidelineBox = document.getElementById("guidelineBox");
+      if (guidelineBox) {
+        guidelineBox.addEventListener("click", function (e) {
+          window.location.href = "./guidelines-page.html";
+        });
+      }
+      
+      // Event listener for home link, redirects to home page
+      var home = document.getElementById("home");
+      if (home) {
+        home.addEventListener("click", function (e) {
+          window.location.href = "./index.html";
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <!-- Linking external CSS files -->
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./guidelines-page.css" />
+  
+  <!-- Linking Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+</head>
+<body>
+  <div class="guidelines-page">
+    <!-- Image for home page icon -->
+    <img class="home-page-icon3" alt="" src="./public/home-page@2x.png" />
+
+    <!-- Navigation bar -->
+    <div class="nav-bar3"></div>
+
+    <!-- About box -->
+    <div class="about-box3"></div>
+
+    <!-- Guideline box -->
+    <div class="guideline-box3"></div>
+
+    <!-- Title for guidelines page -->
+    <div class="guidelines3">Guidelines</div>
+
+    <!-- About link -->
+    <div class="about6" id="aboutText">About</div>
+
+    <!-- Home link -->
+    <div class="home6"></div>
+    <div class="home7" id="homeText">Home</div>
+
+    <!-- Container for guidelines section -->
+    <div class="guidelines-page-child"></div>
+
+    <!-- Guidelines sections -->
+    <b class="guidelines-section-container">
+      <span>Guidelines Section</span>
+    </b>
+    <div class="sample-size-should-container">
+      <span>.</span>
+      <span class="sample-size-should">Sample size: should be an integer 1, 2, etc</span>
+    </div>
+    <div class="distribution-should-be-container">
+      <span>.</span>
+      <span class="sample-size-should">Distribution: should be typed as normal, poisson, exponential, etc</span>
+    </div>
+    <div class="type-of-var-container">
+      <span>.</span>
+      <span class="sample-size-should">Comp_metric: should be typed as mean, variance, correlation, regression, etc</span>
+    </div>
+    <div class="independence-should-be-container">
+      <span>.</span>
+      <span class="sample-size-should">Independence: should be typed as independent or related</span>
+    </div>
+    <div class="sample-num-container">
+      <span>.</span>
+      <span class="sample-size-should">Sample num: one sampled, two sampled, etc should be typed as integer such as 1, 2</span>
+    </div>
+  </div>
+
+  <!-- JavaScript section -->
+  <script>
+    // Event listener for the Home link
+    var homeText = document.getElementById("homeText");
+    if (homeText) {
+      homeText.addEventListener("click", function (e) {
+        // Redirect to home-page.html
+        window.location.href = "./index.html";
+      });
+    }
+
+    // Event listener for the About link
+    var aboutText = document.getElementById("aboutText");
+    if (aboutText) {
+      aboutText.addEventListener("click", function (e) {
+        // Redirect to about-page.html
+        window.location.href = "./about-page.html";
+      });
+    }
+  </script>
+</body>
+</html>
